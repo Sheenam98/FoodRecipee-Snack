@@ -91,6 +91,7 @@ import {
                   <TouchableOpacity testID="handlerecipeBtn" onPress={() => handlerecipeClick(recipe)}>
                   
                     <Text style={styles.recipeTitle}>{recipe.title}</Text>
+                    <Text style={styles.ingredient}>{recipe.ingredient}</Text>
                     <Text style={styles.recipeDescription} testID="recipeDescp">
                         {recipe.description?.substring(0, 50) + "..."}
                     </Text>

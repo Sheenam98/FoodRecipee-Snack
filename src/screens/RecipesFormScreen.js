@@ -7,12 +7,15 @@ export default function RecipesFormScreen({ route, navigation }) {
   const { recipeToEdit, recipeIndex, onrecipeEdited } = route.params || {};
   const [title, setTitle] = useState(recipeToEdit ? recipeToEdit.title : "");
   const [image, setImage] = useState(recipeToEdit ? recipeToEdit.image : "");
+    const [ingredient, setIngredient] = useState(
+    recipeToEdit ? recipeToEdit.ingredient : ""
+  );
   const [description, setDescription] = useState(
     recipeToEdit ? recipeToEdit.description : ""
   );
 
   const saverecipe = async () => {
-    const newRecipe = { title, image, description };
+    const newRecipe = { title, image, ingredient, description };
     try {
       const existingRecipes = await AsyncStorage.getItem("customrecipes");
       const parsedRecipes = existingRecipes ? JSON.parse(existingRecipes) : [];
@@ -53,6 +56,12 @@ export default function RecipesFormScreen({ route, navigation }) {
       ) : (
         <Text style={styles.imagePlaceholder}>Upload Image URL</Text>
       )}
+      <TextInput
+        placeholder="Ingredients"
+        value={ingredient}
+        onChangeText={setIngredient}
+        style={styles.input}
+      />
       <TextInput
         placeholder="Description"
         value={description}
