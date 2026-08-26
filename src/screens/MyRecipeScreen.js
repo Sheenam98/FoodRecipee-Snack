@@ -138,19 +138,12 @@ import {
       alignItems: "center",
       borderRadius: 5,
       width:300,
-     marginLeft:500
-      // marginBottom: hp(2),
+     marginLeft:500,
     },
     addButtonText: {
       color: "#fff",
       fontWeight: "600",
       fontSize: hp(2.2),
-      width:300,
-     marginLeft:500
-      // marginBottom: hp(2),
-      width: wp(80),
-      alignSelf: "center",
-      marginBottom: hp(2),
     },
     scrollContainer: {
       paddingBottom: hp(2),
