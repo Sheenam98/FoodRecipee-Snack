@@ -70,9 +70,14 @@ import {
           <Text style={styles.backButtonText}>{"Back"}</Text>
         </TouchableOpacity>
   
+    <View style={styles.buttonContainer}>
+
+
         <TouchableOpacity onPress={handleAddrecipe} style={styles.addButton}>
           <Text style={styles.addButtonText}>Add New recipe</Text>
         </TouchableOpacity>
+
+        </View>
   
         {loading ? (
           <ActivityIndicator size="large" color="#f59e0b" />
@@ -132,18 +137,25 @@ import {
       fontSize: hp(2.2),
       color: "#4F75FF",
     },
+    buttonContainer: {
+    width: '100%',
+    alignItems: 'center',     // Dynamically centers the button horizontally
+    justifyContent: 'center',
+    marginBottom: 30,         // Creates a clean gap above the cards
+  },
     addButton: {
-      backgroundColor: "#4F75FF",
-      padding: wp(.7),
-      alignItems: "center",
-      borderRadius: 5,
-      width:300,
-     marginLeft:500,
-    },
+    backgroundColor: "#4F75FF",
+    paddingVertical: 12,      // Avoid wp() for padding to keep it stable on web
+    paddingHorizontal: 40,
+    borderRadius: 5,
+    width: '90%',             // Fluid on smaller viewports
+    maxWidth: 300,            // Prevents it from stretching like a massive bar on desktop
+  },
     addButtonText: {
       color: "#fff",
       fontWeight: "600",
       fontSize: hp(2.2),
+      textAlign: 'center',
     },
     scrollContainer: {
       paddingBottom: hp(2),
